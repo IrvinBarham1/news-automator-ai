@@ -2,7 +2,7 @@
 
 An automated news-reporting pipeline built with **Spring Boot** and **Spring AI**. It researches current news with Anthropic's web search tool, turns stories into comic-style posts with captions, and publishes them to Instagram.
 
-**See it live:** [@TODO-handle on Instagram](https://instagram.com/TODO-handle)
+**See it live:** [@TODO-handle on Instagram](https://instagram.com/whatsgoingon464)
 
 ## Sample output
 
