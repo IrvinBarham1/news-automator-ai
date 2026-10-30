@@ -1,27 +1,56 @@
 # Comic News Generator
 
-Turns live news into comic strips. Spring Boot 4.1.1, Spring AI 2.0.1, Java 21.
+An automated news-reporting pipeline built with **Spring Boot** and **Spring AI**. It researches current news with Anthropic's web search tool, turns stories into comic-style posts with captions, and publishes them to Instagram.
 
-## Run
+**See it live:** [@TODO-handle on Instagram](https://instagram.com/TODO-handle)
 
-Set your keys as environment variables (never in the repo):
+## Sample output
 
-    ANTHROPIC_API_KEY=...
-    CLOUDFLARE_ACCOUNT_ID=...   (once the image adapter exists)
-    CLOUDFLARE_API_TOKEN=...
+<!-- Add 1–2 example posts here, e.g. docs/images/sample-1.png -->
+![Sample post](docs/images/sample-1.png)
 
-Then:
+## Why I built it
 
-    ./mvnw spring-boot:run        (macOS/Linux)
-    mvnw.cmd spring-boot:run      (Windows)
+A research project in automated news reporting: can an LLM-driven pipeline reliably gather real news, check what it found, and turn it into shareable content without manual steps in between?
 
-The MCP server listens at http://localhost:8080/mcp
+## How it works
 
-## Bounded contexts
+```mermaid
+flowchart LR
+    A[Fetch news<br/>Anthropic web search tool] --> B{Results usable?}
+    B -- no, retry --> A
+    B -- yes --> C[Analyze & select stories]
+    C --> D[Generate comic + caption]
+    D --> E[Publish to Instagram]
+```
 
-| Package       | Context      | Owns                                              |
-|---------------|--------------|---------------------------------------------------|
-| newsdigest    | News Digest  | fetch, worthiness, post-history audit, category   |
-| generateart   | Generate Art | script, review, draw, revise, compose             |
-| publishing    | Publishing   | content, post, share, post history                |
-| shared        | Contract     | StorySelected event, StoryMode policy             |
+1. **Fetch** — Calls Claude with Anthropic's web search tool to gather current stories and their sources.
+2. **Validate & retry** — Checks the returned results and re-queries when they come back thin or off-target.
+3. **Analyze** — TODO: how stories are selected and summarized.
+4. **Generate** — TODO: how the comic and caption are produced (which model/API).
+5. **Publish** — TODO: automated via API, or prepared for manual upload.
+
+## Design decisions
+
+**Web search tool over RSS feeds or page scraping.** News comes back as structured model output rather than raw HTML or a fixed feed, so the app can inspect what it gathered, retry when results are weak, and analyze stories before generating anything. Scraping would mean maintaining a parser per site; RSS would limit coverage to whatever feeds were configured.
+
+## Tech stack
+
+| Area | Technology |
+|---|---|
+| Language | Java TODO |
+| Framework | Spring Boot TODO, Spring AI TODO |
+| LLM & search | Anthropic Claude API + web search tool |
+| Build | Maven |
+| Publishing | Instagram |
+
+## Getting started
+
+**Prerequisites:** Java TODO+, an Anthropic API key.
+
+```bash
+git clone https://github.com/TODO-username/comic-news-generator.git
+cd comic-news-generator
+export ANTHROPIC_API_KEY=your-key
+./mvnw spring-boot:run
+```
