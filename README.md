@@ -1,4 +1,4 @@
-# Comic News Generator
+# News Automator AI
 
 An automated news-reporting pipeline built with **Spring Boot** and **Spring AI**. It researches current news with Anthropic's web search tool, turns stories into comic-style posts with captions, and publishes them to Instagram.
 
@@ -26,10 +26,10 @@ flowchart LR
     D --> E[Publish to Instagram]
 ```
 
-1. **Fetch** — Calls Claude with Anthropic's web search tool to gather current stories and their sources.
+1. **Fetch** — Calls Claude with Anthropic's web search tool to gather current stories and their sources, and parse non-deterministic data into a Java object for further analysis
 2. **Validate & retry** — Checks the returned results and re-queries when they come back thin or off-target.
 3. **Analyze** — TODO: how stories are selected and summarized.
-4. **Generate** — Captions are generated depending on the topic of the news that is reported; Different news topics are reported uniquely. Images are generated based upon the caption and the News object which gets created when the news is researched.
+4. **Generate** — Captions are generated depending on the topic of the news that is reported based on the News Java object. Notably, each news topic is reported uniquely. Images are generated from the caption and the News object that is created when the news is researched.
 5. **Publish** — TODO: automated via API, or prepared for manual upload.
 
 ## Design decisions
