@@ -43,8 +43,8 @@ flowchart LR
 
 | Area | Technology |
 |---|---|
-| Language | Java TODO |
-| Framework | Spring Boot TODO, Spring AI TODO |
+| Language | Java |
+| Framework | Spring Boot, Spring AI  |
 | LLM & search | Anthropic Claude API + web search tool |
 | Build | Maven |
 | Publishing | Instagram |
