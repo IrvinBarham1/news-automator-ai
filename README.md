@@ -8,6 +8,7 @@ An automated news-reporting pipeline built with **Spring Boot** and **Spring AI*
 
 <!-- Add 1–2 example posts here, e.g. docs/images/sample-1.png -->
 <img width="1538" height="910" alt="image" src="https://github.com/user-attachments/assets/f70681bf-16f2-478a-8c12-ef7af380c1e2" />
+<img width="1532" height="910" alt="image" src="https://github.com/user-attachments/assets/523eefef-f3c0-4f5c-8fdc-24e1c149ac66" />
 
 
 ## Why I built it
@@ -28,7 +29,7 @@ flowchart LR
 1. **Fetch** — Calls Claude with Anthropic's web search tool to gather current stories and their sources.
 2. **Validate & retry** — Checks the returned results and re-queries when they come back thin or off-target.
 3. **Analyze** — TODO: how stories are selected and summarized.
-4. **Generate** — TODO: how the comic and caption are produced (which model/API).
+4. **Generate** — Captions are generated depending on the topic of the news that is reported; Different news topics are reported uniquely. Images are generated based upon the caption and the News object which gets created when the news is researched.
 5. **Publish** — TODO: automated via API, or prepared for manual upload.
 
 ## Design decisions
