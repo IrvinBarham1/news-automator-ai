@@ -51,8 +51,6 @@ flowchart LR
 
 ## Getting started
 
-**Prerequisites:** Java TODO+, an Anthropic API key.
-
 ```bash
 git clone https://github.com/TODO-username/comic-news-generator.git
 cd comic-news-generator
