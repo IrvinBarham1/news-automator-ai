@@ -34,7 +34,10 @@ flowchart LR
 
 ## Design decisions
 
-**Web search tool over RSS feeds or page scraping.** News comes back as structured model output rather than raw HTML or a fixed feed, so the app can inspect what it gathered, retry when results are weak, and analyze stories before generating anything. Scraping would mean maintaining a parser per site; RSS would limit coverage to whatever feeds were configured.
+<img width="1417" height="679" alt="image" src="https://github.com/user-attachments/assets/e5f7acdc-1b4e-468f-a0fa-7f486c65e2ee" />
+<img width="682" height="569" alt="image" src="https://github.com/user-attachments/assets/9127e774-18ce-4a3e-a4f9-6a2a4c6d5c1a" />
+<img width="1178" height="372" alt="image" src="https://github.com/user-attachments/assets/4f1f79c7-6843-46b2-bf00-2cbbeeb540b1" />
+
 
 ## Tech stack
 
