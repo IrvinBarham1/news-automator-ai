@@ -7,7 +7,8 @@ An automated news-reporting pipeline built with **Spring Boot** and **Spring AI*
 ## Sample output
 
 <!-- Add 1–2 example posts here, e.g. docs/images/sample-1.png -->
-![Sample post](docs/images/sample-1.png)
+<img width="1538" height="910" alt="image" src="https://github.com/user-attachments/assets/f70681bf-16f2-478a-8c12-ef7af380c1e2" />
+
 
 ## Why I built it
 
